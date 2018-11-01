@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash.component';
+import { FormDataService } from './pages/form-data.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FormDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Dependency } from '../models/dependency.model';
+import { FormDataService } from '../form-data.service';
 
 @Component({
   selector: 'app-dependency-dash',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DependencyDashComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formDataService: FormDataService
+  ) { }
+
+  dependency: Dependency;
 
   ngOnInit() {
   }
 
+  onSubmit(form: any){
+    this.formDataService.setDependency(form);
+  }
 }

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash.component';
+import { PageTemplatesComponent } from './pages/page-templates/page-templates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DependencyDashComponent,
-    MainComponent
+    MainComponent,
+    PageTemplatesComponent
   ],
   imports: [
     BrowserModule,

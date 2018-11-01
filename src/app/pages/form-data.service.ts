@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Dependency } from "./models/dependency.model";
+import { Dependency, DependencySection } from "./models/dependency.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 
@@ -19,7 +19,7 @@ export class FormDataService {
   }
 
   getDependencies() {
-    return this.http.get('/rest/dependencies/get-dependencies', httpOptions);
+    return this.http.get<DependencySection>('/rest/dependencies/get-dependencies', httpOptions);
   }
   
 }

@@ -1,3 +1,8 @@
+export class DependencySection {
+    name: string;
+    content: Dependency[];
+}
+
 export class Dependency {
     name: string;
     id: string;

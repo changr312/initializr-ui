@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectTemplate } from '../models/project-template.model';
+import { FormDataService } from '../form-data.service';
+import { Dependency, DependencySection } from '../models/dependency.model';
 
 @Component({
   selector: 'app-page-templates',
@@ -12,12 +14,21 @@ export class PageTemplatesComponent implements OnInit {
     dependencies: null,
   };
 
+  allDependencies: DependencySection = new DependencySection();
+
   projectTemplateName;
   dependencies;
 
-  constructor() { }
+  constructor(
+    private formDataService: FormDataService
+  ) { }
 
   ngOnInit() {
+    this.formDataService.getDependencies().subscribe(
+      data =>{
+        this.allDependencies = data;
+      }
+    );
   }
 
   onSubmit() {

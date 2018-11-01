@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
@@ -17,11 +18,12 @@ import { PageTemplatesComponent } from './pages/page-templates/page-templates.co
     PageTemplatesComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [FormDataService],
+  providers: [FormDataService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

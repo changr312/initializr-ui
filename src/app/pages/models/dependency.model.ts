@@ -5,4 +5,5 @@ export class Dependency {
     versionRange: string;
     groupId: string;
     artifactId: string;
+    version: string;
 }

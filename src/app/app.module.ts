@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PagesComponent } from './pages/pages.component';
 import { MainComponent } from './pages/main/main.component';
 import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash.component';
 
@@ -11,7 +10,6 @@ import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash
   declarations: [
     AppComponent,
     DependencyDashComponent,
-    PagesComponent,
     MainComponent
   ],
   imports: [

@@ -1,13 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash.component';
+import { AppComponent } from './app.component';
 
-const routes: Routes = [
-  { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
-  { path: '**', pathMatch: 'full', component: PageNotFoundComponent}
-
+export const routes: Routes = [
+  {
+      path: '',
+      component: AppComponent,
+      children: [
+          {
+              path: 'main',
+              loadChildren: './main/main.module#MainModule',
+          },
+          {
+              path: 'dependency',
+              component: DependencyDashComponent
+          }
+      ]
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

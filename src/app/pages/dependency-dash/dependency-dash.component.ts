@@ -18,8 +18,8 @@ export class DependencyDashComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.dependency);
-    //TODO send dependency object to service call to create
+    this.formDataService.addDependency(this.dependency).subscribe();
   }
 }

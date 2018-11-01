@@ -13,12 +13,13 @@ export class DependencyDashComponent implements OnInit {
     private formDataService: FormDataService
   ) { }
 
-  dependency: Dependency;
+  dependency: Dependency = new Dependency();
 
   ngOnInit() {
   }
 
-  onSubmit(form: any){
-    this.formDataService.setDependency(form);
+  onSubmit(){
+    console.log(this.dependency);
+    //TODO send dependency object to service call to create
   }
 }

@@ -17,4 +17,9 @@ export class FormDataService {
   addDependency(dependency: Dependency): Observable<Dependency> {
     return this.http.post<Dependency>('/rest/dependencies/add-dependency', dependency, httpOptions);
   }
+
+  getDependencies() {
+    return this.http.get('/rest/dependencies/get-dependencies', httpOptions);
+  }
+  
 }

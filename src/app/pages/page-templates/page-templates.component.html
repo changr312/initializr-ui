@@ -1,27 +1,31 @@
-<div class="container-fluid">
-  <label>Project Template Name: </label>
-  <input [(ngModel)]="projectTemplateName" />
-  <label>Dependencies: </label>
-  <input [(ngModel)]="dependencies" />
-  <h2>Dependencies</h2>
-  <p>Add Spring Boot Starters and dependencies to your application</p>
-  <div class="form-group">
-    <label for="autocomplete" class="control-label">Search for dependencies</label>
-    <span class="twitter-typeahead" style="position: relative; display: inline-block;">
-      <input tabindex="-1" class="form-control tt-hint"
-        type="text" readonly="" autocomplete="off" spellcheck="false" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(250, 250, 250);">
-        <input
-        tabindex="11" id="autocomplete" class="form-control tt-input" type="text" placeholder="Web, Security, JPA, Actuator, Devtools..."
-        name="autocomplete" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
-      <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">we</pre>
-      <div class="tt-menu tt-empty" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
-        <div class="tt-dataset tt-dataset-starters"></div>
-      </div></span>
-  </div>
-  <div class="form-group">
-    <label for="starters" class="control-label">Selected Dependencies</label>
-    <div id="starters">
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #dependencyForm="ngForm">
+    <div class="form-group">
+      <h2>Project Template Name</h2>
+      <label for="projectTemplateNm">Enter project name</label>
+      <input class="form-control" id="projectTemplateNm" [(ngModel)]="projectTemplateData.projectTemplateNm" name="projectTemplateNm"
+        placeholder="Project Template Name">
     </div>
-  </div>
-  <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    <h2>Dependencies</h2>
+    <p>Add Spring Boot Starters and dependencies to your application</p>
+    <div class="form-group">
+      <label for="autocomplete" class="control-label">Search for dependencies</label>
+      <span class="twitter-typeahead" style="position: relative;">
+        <input tabindex="-1" class="form-control tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false"
+          dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(250, 250, 250);">
+        <input tabindex="11" id="autocomplete" class="form-control tt-input" type="text" placeholder="Web, Security, JPA, Actuator, Devtools..."
+          name="autocomplete" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
+        <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">we</pre>
+        <div class="tt-menu tt-empty" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+          <div class="tt-dataset tt-dataset-starters"></div>
+        </div></span>
+    </div>
+    <div class="form-group">
+      <label for="starters" class="control-label">Selected Dependencies</label>
+      <div id="starters">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!dependencyForm.form.valid">Submit</button>
+    <p>Don't know what to look for? Want more options?<a href=""> Switch to the full version.</a></p>
+  </form>
 </div>

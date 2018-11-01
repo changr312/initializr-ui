@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DependencyDashComponent } from './dependency-dash/dependency-dash.component';
+import { PagesComponent } from './pages/pages.component';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DependencyDashComponent,
+    PagesComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

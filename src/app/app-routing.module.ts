@@ -4,20 +4,7 @@ import { DependencyDashComponent } from './pages/dependency-dash/dependency-dash
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  {
-      path: '',
-      component: AppComponent,
-      children: [
-          {
-              path: 'main',
-              loadChildren: './main/main.module#MainModule',
-          },
-          {
-              path: 'dependency',
-              component: DependencyDashComponent
-          }
-      ]
-  },
+  { path: 'dependency', component: DependencyDashComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

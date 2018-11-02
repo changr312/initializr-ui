@@ -1,6 +1,7 @@
-<br/>
+<br />
 <h1 align="center">Project Template</h1>
-<br/>
+<br />
+
 <div class="container">
   <form (ngSubmit)="onSubmit()" #dependencyForm="ngForm">
     <div class="form-group">
@@ -11,7 +12,7 @@
     <h2>Dependencies</h2>
     <p>Add Spring Boot Starters and dependencies to your application</p>
 
-
+    <!-- 
     <div class="form-group">
       <label for="autocomplete" class="control-label">Search for dependencies</label>
       <input tabindex="11" id="autocomplete" class="form-control" type="text" placeholder="Web, Security, JPA, Actuator, Devtools..."
@@ -27,8 +28,35 @@
       <label for="starters" class="control-label">Selected Dependencies</label>
       <div id="starters">
       </div>
-    </div>
+    </div> -->
+
     <button type="submit" class="btn btn-primary" [disabled]="!dependencyForm.form.valid">Submit</button>
-    <p>Don't know what to look for? Want more options?<a href=""> Switch to the full version.</a></p>
+    <!-- <p>Don't know what to look for? Want more options?<a href=""> Switch to the full version.</a></p> -->
+
+    <br />
+    <br />
+    <div class="row">
+      <div class="col">
+        <h3>{{coreDependency.name}}</h3>
+        <div class="col" *ngFor="let dependency of coreDependency.content; let i = index">
+          <label>
+            <input type="checkbox" (change)="checkboxChanged(dependency.id)"/>
+            {{dependency.name}}
+          </label>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>{{customDependency.name}}</h3>
+        <div class="col" *ngFor="let dependency of customDependency.content; let i = index">
+          <label>
+            <input type="checkbox" (change)="checkboxChanged(dependency.id)"/>
+            {{dependency.name}}
+          </label>
+        </div>
+      </div>
+
+    </div>
+
   </form>
 </div>
